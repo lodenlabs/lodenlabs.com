@@ -8,7 +8,17 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/90 backdrop-blur-md border-b border-[#1f1f2e]">
         <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
+            <svg className="w-8 h-8" viewBox="0 0 32 32">
+              <defs>
+                <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6366f1"/>
+                  <stop offset="100%" stopColor="#a855f7"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="6" fill="url(#nav-grad)"/>
+              <text x="16" y="23" fontFamily="system-ui, -apple-system, sans-serif" fontSize="18" fontWeight="700" fill="white" textAnchor="middle">LL</text>
+            </svg>
             LodenLabs
           </Link>
           <div className="flex items-center gap-6">
