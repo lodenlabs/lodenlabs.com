@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { projects } from '@/data/projects';
 import ProjectCard from '@/components/ProjectCard';
+import CursorGlow from '@/components/CursorGlow';
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -43,6 +44,7 @@ const jsonLd = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
+      <CursorGlow />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -64,10 +66,10 @@ export default function Home() {
             LodenLabs
           </Link>
           <div className="flex items-center gap-6">
-            <Link href="#projects" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <Link href="#projects" className="text-gray-400 hover:text-white transition-colors">
               Projects
             </Link>
-            <Link href="#about" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <Link href="#about" className="text-gray-400 hover:text-white transition-colors">
               About
             </Link>
             <a
@@ -116,7 +118,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="#projects"
-              className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition-colors text-center"
+              className="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 text-white font-medium rounded-xl transition-all text-center"
             >
               View Projects
             </Link>
@@ -124,7 +126,7 @@ export default function Home() {
               href="https://twitter.com/jason_ganub"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 bg-transparent border border-gray-700 hover:border-gray-500 text-white font-medium rounded-xl transition-colors text-center inline-flex items-center justify-center gap-2"
+              className="px-8 py-3 bg-transparent border border-purple-500/50 hover:border-purple-400 text-white font-medium rounded-xl transition-colors text-center inline-flex items-center justify-center gap-2"
             >
               Get in Touch
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

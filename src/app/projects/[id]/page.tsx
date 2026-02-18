@@ -71,10 +71,10 @@ export default async function ProjectPage({ params }: PageProps) {
             LodenLabs
           </Link>
           <div className="flex items-center gap-6">
-            <Link href="/#projects" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <Link href="/#projects" className="text-gray-400 hover:text-white transition-colors">
               Projects
             </Link>
-            <Link href="/#about" className="text-gray-400 hover:text-white transition-colors text-sm">
+            <Link href="/#about" className="text-gray-400 hover:text-white transition-colors">
               About
             </Link>
             <a
