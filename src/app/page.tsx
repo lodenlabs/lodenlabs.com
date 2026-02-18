@@ -95,7 +95,7 @@ export default function Home() {
             <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"> Alchemy</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-            Web and mobile apps by{' '}
+            🧪 Web and mobile apps by{' '}
             <a
               href="https://twitter.com/jason_ganub"
               target="_blank"

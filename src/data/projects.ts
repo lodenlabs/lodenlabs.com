@@ -26,12 +26,30 @@ export const projects: Project[] = [
     category: "web",
     websiteUrl: "https://inklist.io",
     techStack: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    releaseDate: "2024",
+    releaseDate: "2025",
     features: [
       "Browse artist portfolios",
       "Discover tattoo styles",
       "Book appointments",
       "Verified artists & studios"
+    ]
+  },
+  {
+    id: "tixvalidator",
+    title: "TixValidator",
+    tagline: "Verify Ticketmaster Tickets Instantly",
+    description: "TixValidator protects ticket buyers from counterfeit Ticketmaster tickets. Upload your PDF ticket for instant authenticity verification using advanced analysis technology. Never get scammed buying tickets again.",
+    icon: "/icons/tixvalidator.png",
+    screenshots: [],
+    category: "web",
+    websiteUrl: "https://tixvalidator.com",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    releaseDate: "2025",
+    features: [
+      "Instant ticket verification",
+      "PDF analysis technology",
+      "Secure & private processing",
+      "Global Ticketmaster support"
     ]
   }
 ];

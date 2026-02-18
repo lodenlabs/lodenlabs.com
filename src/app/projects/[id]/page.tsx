@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import { getProjectById, getAllProjectIds } from '@/data/projects';
 import ProjectLinks from '@/components/ProjectLinks';
@@ -8,17 +9,15 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-const categoryColors = {
-  web: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  mobile: 'bg-green-500/20 text-green-400 border-green-500/30',
-  game: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-};
-
-const categoryLabels = {
-  web: 'Web App',
-  mobile: 'Mobile App',
-  game: 'Game',
-};
+function getFaviconUrl(websiteUrl: string | undefined): string | null {
+  if (!websiteUrl) return null;
+  try {
+    const domain = new URL(websiteUrl).hostname;
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+  } catch {
+    return null;
+  }
+}
 
 export async function generateStaticParams() {
   const ids = getAllProjectIds();
@@ -99,14 +98,22 @@ export default async function ProjectPage({ params }: PageProps) {
       <section className="gradient-bg px-6 py-16 md:py-20">
         <div className="w-full max-w-4xl mx-auto text-center">
           {/* Icon */}
-          <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mx-auto mb-6 text-4xl font-bold text-white shadow-xl">
-            {project.title.charAt(0)}
+          <div className="w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6 overflow-hidden">
+            {getFaviconUrl(project.websiteUrl) ? (
+              <Image
+                src={getFaviconUrl(project.websiteUrl)!}
+                alt={`${project.title} icon`}
+                width={96}
+                height={96}
+                className="w-full h-full object-contain"
+                unoptimized
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-4xl font-bold text-white shadow-xl">
+                {project.title.charAt(0)}
+              </div>
+            )}
           </div>
-
-          {/* Category badge */}
-          <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium border mb-4 ${categoryColors[project.category]}`}>
-            {categoryLabels[project.category]}
-          </span>
 
           {/* Title & Tagline */}
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -168,34 +175,6 @@ export default async function ProjectPage({ params }: PageProps) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Screenshots placeholder */}
-      <section className="px-6 py-16 bg-[#111118]/50">
-        <div className="w-full max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6 text-center">Screenshots</h2>
-          <div className="flex gap-4 overflow-x-auto pb-4 snap-x">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-72 h-48 bg-[#111118] border border-[#1f1f2e] rounded-xl flex items-center justify-center snap-center"
-              >
-                <span className="text-gray-600">Screenshot {i}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 py-16">
-        <div className="w-full max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">Ready to try {project.title}?</h2>
-          <p className="text-gray-400 mb-8">
-            Get started today and see what {project.title} can do for you.
-          </p>
-          <ProjectLinks project={project} />
         </div>
       </section>
 
