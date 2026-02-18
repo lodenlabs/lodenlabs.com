@@ -2,9 +2,51 @@ import Link from 'next/link';
 import { projects } from '@/data/projects';
 import ProjectCard from '@/components/ProjectCard';
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://lodenlabs.com/#person",
+      "name": "Jason Ganub",
+      "url": "https://lodenlabs.com",
+      "sameAs": [
+        "https://twitter.com/jason_ganub"
+      ],
+      "jobTitle": "Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "LodenLabs"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lodenlabs.com/#organization",
+      "name": "LodenLabs",
+      "url": "https://lodenlabs.com",
+      "founder": {
+        "@id": "https://lodenlabs.com/#person"
+      },
+      "description": "LodenLabs builds beautiful web apps, mobile apps, and games."
+    },
+    {
+      "@type": "WebSite",
+      "name": "LodenLabs",
+      "url": "https://lodenlabs.com",
+      "author": {
+        "@id": "https://lodenlabs.com/#person"
+      }
+    }
+  ]
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/90 backdrop-blur-md border-b border-[#1f1f2e]">
         <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -49,13 +91,27 @@ export default function Home() {
       <section className="gradient-bg px-6 py-24 md:py-32">
         <div className="w-full max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Building
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"> digital </span>
-            experiences
+            Digital
+            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"> Alchemy</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-            LodenLabs crafts beautiful web apps, mobile apps, and games.
-            Turning ideas into polished products that people love to use.
+            Web and mobile apps by{' '}
+            <a
+              href="https://twitter.com/jason_ganub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative inline-flex items-center gap-1 font-medium bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity group"
+            >
+              Jason Ganub
+              <svg
+                className="w-4 h-4 text-purple-400 -translate-y-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </a>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -95,48 +151,28 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="px-6 py-20 bg-[#111118]/50">
         <div className="w-full max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                About LodenLabs
-              </h2>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                I&apos;m a solo developer passionate about building great software.
-                From concept to launch, I focus on creating products that are
-                both beautiful and functional.
-              </p>
-              <p className="text-gray-400 mb-8 leading-relaxed">
-                Whether it&apos;s a web application, mobile app, or game, I bring the
-                same level of care and attention to detail to everything I build.
-              </p>
-              <a
-                href="mailto:hello@lodenlabs.com"
-                className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
-              >
-                Get in touch
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-[#111118] border border-[#1f1f2e] rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold mb-1">6+</div>
-                <div className="text-gray-500 text-sm">Projects</div>
-              </div>
-              <div className="bg-[#111118] border border-[#1f1f2e] rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold mb-1">3</div>
-                <div className="text-gray-500 text-sm">Platforms</div>
-              </div>
-              <div className="bg-[#111118] border border-[#1f1f2e] rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold mb-1">100%</div>
-                <div className="text-gray-500 text-sm">Passion</div>
-              </div>
-              <div className="bg-[#111118] border border-[#1f1f2e] rounded-xl p-6 text-center">
-                <div className="text-3xl font-bold mb-1">24/7</div>
-                <div className="text-gray-500 text-sm">Dedication</div>
-              </div>
-            </div>
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              About LodenLabs
+            </h2>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              I&apos;m Jason Ganub, a solo developer passionate about building great software.
+              From concept to launch, I focus on creating products that are
+              both beautiful and functional.
+            </p>
+            <p className="text-gray-400 mb-8 leading-relaxed">
+              Whether it&apos;s a web application, mobile app, or game, I bring the
+              same level of care and attention to detail to everything I build.
+            </p>
+            <a
+              href="mailto:hello@lodenlabs.com"
+              className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
+            >
+              Get in touch
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -146,7 +182,7 @@ export default function Home() {
         <div className="w-full max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} LodenLabs. All rights reserved.
+              &copy; {new Date().getFullYear()} LodenLabs by Jason Ganub. All rights reserved.
             </div>
             <div className="flex items-center gap-6">
               <a
