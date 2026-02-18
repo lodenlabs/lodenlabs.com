@@ -51,6 +51,18 @@ export const projects: Project[] = [
       "Secure & private processing",
       "Global Ticketmaster support"
     ]
+  },
+  {
+    id: "upcoming",
+    title: "Upcoming",
+    tagline: "A mobile game is brewing...",
+    description: "Something fun is in the works. Stay tuned!",
+    icon: "",
+    screenshots: [],
+    category: "game",
+    techStack: [],
+    releaseDate: "Coming Soon",
+    features: []
   }
 ];
 
