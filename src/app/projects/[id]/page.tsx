@@ -58,18 +58,37 @@ export default async function ProjectPage({ params }: PageProps) {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/90 backdrop-blur-md border-b border-[#1f1f2e]">
         <div className="w-full max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold">
+          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
+            <svg className="w-8 h-8" viewBox="0 0 32 32">
+              <defs>
+                <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6366f1"/>
+                  <stop offset="100%" stopColor="#a855f7"/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="6" fill="url(#nav-grad)"/>
+              <text x="16" y="23" fontFamily="system-ui, -apple-system, sans-serif" fontSize="18" fontWeight="700" fill="white" textAnchor="middle">LL</text>
+            </svg>
             LodenLabs
           </Link>
-          <Link
-            href="/#projects"
-            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to Projects
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/#projects" className="text-gray-400 hover:text-white transition-colors text-sm">
+              Projects
+            </Link>
+            <Link href="/#about" className="text-gray-400 hover:text-white transition-colors text-sm">
+              About
+            </Link>
+            <a
+              href="https://twitter.com/jason_ganub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -185,27 +204,19 @@ export default async function ProjectPage({ params }: PageProps) {
         <div className="w-full max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} LodenLabs. All rights reserved.
+              &copy; {new Date().getFullYear()} LodenLabs by Jason Loden Ganub. All rights reserved.
             </div>
-            <div className="flex items-center gap-6">
-              <a
-                href="mailto:hello@lodenlabs.com"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                hello@lodenlabs.com
-              </a>
-              <a
-                href="https://twitter.com/jason_ganub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                @jason_ganub
-              </a>
-            </div>
+            <a
+              href="https://twitter.com/jason_ganub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              @jason_ganub
+            </a>
           </div>
         </div>
       </footer>

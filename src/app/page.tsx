@@ -8,7 +8,7 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": "https://lodenlabs.com/#person",
-      "name": "Jason Ganub",
+      "name": "Jason Loden Ganub",
       "url": "https://lodenlabs.com",
       "sameAs": [
         "https://twitter.com/jason_ganub"
@@ -102,7 +102,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="relative inline-flex items-center gap-1 font-medium bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity group"
             >
-              Jason Ganub
+              Jason Loden Ganub
               <svg
                 className="w-4 h-4 text-purple-400 -translate-y-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-1 transition-transform"
                 fill="none"
@@ -121,10 +121,15 @@ export default function Home() {
               View Projects
             </Link>
             <a
-              href="mailto:hello@lodenlabs.com"
-              className="px-8 py-3 bg-transparent border border-gray-700 hover:border-gray-500 text-white font-medium rounded-xl transition-colors text-center"
+              href="https://twitter.com/jason_ganub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-transparent border border-gray-700 hover:border-gray-500 text-white font-medium rounded-xl transition-colors text-center inline-flex items-center justify-center gap-2"
             >
               Get in Touch
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
             </a>
           </div>
         </div>
@@ -156,7 +161,7 @@ export default function Home() {
               About LodenLabs
             </h2>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              I&apos;m Jason Ganub, a solo developer passionate about building great software.
+              I&apos;m Jason Loden Ganub, a solo developer passionate about building great software.
               From concept to launch, I focus on creating products that are
               both beautiful and functional.
             </p>
@@ -165,12 +170,14 @@ export default function Home() {
               same level of care and attention to detail to everything I build.
             </p>
             <a
-              href="mailto:hello@lodenlabs.com"
+              href="https://twitter.com/jason_ganub"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
             >
               Get in touch
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
             </a>
           </div>
@@ -182,27 +189,19 @@ export default function Home() {
         <div className="w-full max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} LodenLabs by Jason Ganub. All rights reserved.
+              &copy; {new Date().getFullYear()} LodenLabs by Jason Loden Ganub. All rights reserved.
             </div>
-            <div className="flex items-center gap-6">
-              <a
-                href="mailto:hello@lodenlabs.com"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                hello@lodenlabs.com
-              </a>
-              <a
-                href="https://twitter.com/jason_ganub"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                @jason_ganub
-              </a>
-            </div>
+            <a
+              href="https://twitter.com/jason_ganub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 text-sm"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              @jason_ganub
+            </a>
           </div>
         </div>
       </footer>
