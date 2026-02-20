@@ -18,19 +18,20 @@ function getFaviconUrl(websiteUrl: string | undefined): string | null {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const faviconUrl = getFaviconUrl(project.websiteUrl);
-  const isUpcoming = project.id === 'upcoming';
+  const iconUrl = project.icon || faviconUrl;
+  const isUpcoming = project.id.startsWith('upcoming');
 
   const cardContent = (
     <div className={`bg-[#111118] border border-[#1f1f2e] rounded-2xl p-6 h-full transition-all duration-300 ${
       isUpcoming
-        ? 'opacity-60 border-dashed'
+        ? 'border-dashed'
         : 'hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10 hover:border-indigo-500/30'
     }`}>
       {/* Icon */}
       <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 overflow-hidden">
-        {faviconUrl ? (
+        {iconUrl ? (
           <Image
-            src={faviconUrl}
+            src={iconUrl}
             alt={`${project.title} icon`}
             width={64}
             height={64}
@@ -39,7 +40,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white">
-            {isUpcoming ? <span className="text-4xl">🎮</span> : <span className="text-2xl">{project.title.charAt(0)}</span>}
+            {isUpcoming ? (
+              <span className="text-4xl">{project.category === 'game' ? '🎮' : '📊'}</span>
+            ) : (
+              <span className="text-2xl">{project.title.charAt(0)}</span>
+            )}
           </div>
         )}
       </div>
