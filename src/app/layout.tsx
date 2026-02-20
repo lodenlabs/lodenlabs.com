@@ -3,9 +3,9 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "LodenLabs by Jason Loden Ganub - Web & Mobile App Development",
-  description: "LodenLabs by Jason Loden Ganub builds beautiful, high-quality web apps, mobile apps, and games. Explore the portfolio of a passionate solo developer.",
-  keywords: ["Jason Loden Ganub", "LodenLabs", "web development", "mobile apps", "games", "software development", "indie developer"],
+  title: "LodenLabs - Digital Alchemy",
+  description: "Digital Alchemy — Web and mobile apps crafted by Jason Loden Ganub. Turning ideas into polished products.",
+  keywords: ["Jason Loden Ganub", "LodenLabs", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer"],
   authors: [{ name: "Jason Loden Ganub" }],
   creator: "Jason Loden Ganub",
   icons: {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "LodenLabs by Jason Loden Ganub - Web & Mobile App Development",
-    description: "Jason Loden Ganub builds beautiful web apps, mobile apps, and games at LodenLabs.",
+    title: "LodenLabs - Digital Alchemy",
+    description: "Web and mobile apps crafted by Jason Loden Ganub.",
     url: "https://lodenlabs.com",
     siteName: "LodenLabs",
     type: "website",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LodenLabs by Jason Loden Ganub",
-    description: "Jason Loden Ganub builds beautiful web apps, mobile apps, and games at LodenLabs.",
+    title: "LodenLabs - Digital Alchemy",
+    description: "Web and mobile apps crafted by Jason Loden Ganub.",
     creator: "@jason_ganub",
     images: ["https://lodenlabs.com/og-image.png"],
   },
