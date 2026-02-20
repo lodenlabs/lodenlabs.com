@@ -3,11 +3,15 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://lodenlabs.com"),
   title: "LodenLabs - Digital Alchemy",
-  description: "Digital Alchemy — Web and mobile apps crafted by Jason Loden Ganub. Turning ideas into polished products.",
-  keywords: ["Jason Loden Ganub", "LodenLabs", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer"],
+  description: "LodenLabs by Jason Loden Ganub — Digital Alchemy. Web and mobile apps crafted with care. Loden Labs builds beautiful software products.",
+  keywords: ["LodenLabs", "Loden Labs", "lodenlabs", "Jason Loden Ganub", "Jason Ganub", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer", "software developer"],
   authors: [{ name: "Jason Loden Ganub" }],
   creator: "Jason Loden Ganub",
+  alternates: {
+    canonical: "https://lodenlabs.com",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -16,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "LodenLabs - Digital Alchemy",
-    description: "Web and mobile apps crafted by Jason Loden Ganub.",
+    description: "Loden Labs — Web and mobile apps crafted by Jason Loden Ganub. Digital Alchemy.",
     url: "https://lodenlabs.com",
     siteName: "LodenLabs",
     type: "website",
