@@ -4,10 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lodenlabs.com"),
-  verification: {
-    google: "O7kRUfEo9nzdExrmVejzW2nOGAdET1Igesj28bQAXTQ",
-  },
-  title: "LodenLabs - Digital Alchemy",
+    title: "LodenLabs - Digital Alchemy",
   description: "LodenLabs by Jason Loden Ganub — Digital Alchemy. Web and mobile apps crafted with care. Loden Labs builds beautiful software products.",
   keywords: ["LodenLabs", "Loden Labs", "lodenlabs", "Jason Loden Ganub", "Jason Ganub", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer", "software developer"],
   authors: [{ name: "Jason Loden Ganub" }],
