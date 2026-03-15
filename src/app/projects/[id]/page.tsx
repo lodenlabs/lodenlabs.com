@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import { getProjectById, getAllProjectIds } from '@/data/projects';
 import ProjectLinks from '@/components/ProjectLinks';
+import MobileMenu from '@/components/MobileMenu';
 import logo from '@public/flask-logo.png';
 
 interface PageProps {
@@ -56,31 +57,35 @@ export default async function ProjectPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-[#222]">
-        <div className="w-full max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Left — Nav links */}
-          <div className="flex items-center gap-6">
-            <Link href="/#about" className="text-base text-[#999] hover:text-white transition-colors">
+      <nav className="nav-aurora fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-[#222]">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
+          {/* Left — Hamburger on mobile, links on desktop */}
+          <MobileMenu links={[
+            { href: '/#about', label: 'About' },
+            { href: '/#experiments', label: 'Experiments' },
+          ]} />
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/#about" className="text-base text-white hover:text-[#999] transition-colors">
               About
             </Link>
-            <Link href="/#experiments" className="text-base text-[#999] hover:text-white transition-colors">
+            <Link href="/#experiments" className="text-base text-white hover:text-[#999] transition-colors">
               Experiments
             </Link>
           </div>
 
-          {/* Center — Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1">
+          {/* Center — Logo (left-aligned on mobile, centered on desktop) */}
+          <Link href="/" className="md:absolute md:left-1/2 md:-translate-x-1/2 flex items-center gap-1">
             <Image alt="" className="h-5 w-auto" src={logo} />
             <span className="text-lg font-medium tracking-tight leading-none">Loden Labs</span>
           </Link>
 
           {/* Right — Social icons */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-4 md:gap-5">
             <a
               href="https://twitter.com/jason_ganub"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#999] hover:text-white transition-colors"
+              className="text-white hover:text-[#999] transition-colors"
               aria-label="X (Twitter)"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -91,7 +96,7 @@ export default async function ProjectPage({ params }: PageProps) {
               href="https://linkedin.com/in/jasonganub"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#999] hover:text-white transition-colors"
+              className="text-white hover:text-[#999] transition-colors"
               aria-label="LinkedIn"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -102,7 +107,7 @@ export default async function ProjectPage({ params }: PageProps) {
               href="https://github.com/jasonganub"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#999] hover:text-white transition-colors"
+              className="text-white hover:text-[#999] transition-colors"
               aria-label="GitHub"
             >
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

@@ -57,3 +57,71 @@ body {
   border-color: #555;
   color: #ccc;
 }
+
+/* Navbar animated gradient */
+@property --nav-pos {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 200%;
+}
+
+.nav-aurora {
+  border-bottom: none !important;
+  animation: nav-flow 6s linear infinite;
+}
+
+/* Flowing gradient background */
+.nav-aurora::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.8) 0%,
+    rgba(168, 85, 247, 0.9) 25%,
+    rgba(236, 72, 153, 0.8) 50%,
+    rgba(168, 85, 247, 0.9) 75%,
+    rgba(59, 130, 246, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  background-position: var(--nav-pos) 0;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Animated gradient border — same position, perfectly in sync */
+.nav-aurora::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.8) 0%,
+    rgba(168, 85, 247, 0.9) 25%,
+    rgba(236, 72, 153, 0.8) 50%,
+    rgba(168, 85, 247, 0.9) 75%,
+    rgba(59, 130, 246, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  background-position: var(--nav-pos) 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.nav-aurora > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes nav-flow {
+  0% {
+    --nav-pos: 200%;
+  }
+  100% {
+    --nav-pos: -200%;
+  }
+}
