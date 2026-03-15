@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://lodenlabs.com"),
   title: "Loden Labs",
-  description: "Loden Labs by Jason Loden Ganub — Digital Alchemy. Web and mobile apps crafted with care. Loden Labs builds beautiful software products.",
+  description: "Experimental projects by Jason Loden Ganub. Web apps, mobile apps, and games.",
   keywords: ["Loden Labs", "Loden Labs", "lodenlabs", "Jason Loden Ganub", "Jason Ganub", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer", "software developer"],
   authors: [{ name: "Jason Loden Ganub" }],
   creator: "Jason Loden Ganub",
@@ -20,25 +20,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Loden Labs",
-    description: "Loden Labs — Web and mobile apps crafted by Jason Loden Ganub. Digital Alchemy.",
+    description: "Experimental projects by Jason Loden Ganub.",
     url: "https://lodenlabs.com",
     siteName: "Loden Labs",
     type: "website",
-    images: [
-      {
-        url: "https://lodenlabs.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Loden Labs - Digital Alchemy",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loden Labs - Digital Alchemy",
-    description: "Web and mobile apps crafted by Jason Loden Ganub.",
+    title: "Loden Labs",
+    description: "Experimental projects by Jason Loden Ganub.",
     creator: "@jason_ganub",
-    images: ["https://lodenlabs.com/og-image.png"],
   },
 };
 
