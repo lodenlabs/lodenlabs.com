@@ -4,9 +4,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lodenlabs.com"),
-    title: "LodenLabs - Digital Alchemy",
-  description: "LodenLabs by Jason Loden Ganub — Digital Alchemy. Web and mobile apps crafted with care. Loden Labs builds beautiful software products.",
-  keywords: ["LodenLabs", "Loden Labs", "lodenlabs", "Jason Loden Ganub", "Jason Ganub", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer", "software developer"],
+  title: "Loden Labs",
+  description: "Loden Labs by Jason Loden Ganub — Digital Alchemy. Web and mobile apps crafted with care. Loden Labs builds beautiful software products.",
+  keywords: ["Loden Labs", "Loden Labs", "lodenlabs", "Jason Loden Ganub", "Jason Ganub", "Digital Alchemy", "web development", "mobile apps", "games", "indie developer", "software developer"],
   authors: [{ name: "Jason Loden Ganub" }],
   creator: "Jason Loden Ganub",
   alternates: {
@@ -19,23 +19,23 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "LodenLabs - Digital Alchemy",
+    title: "Loden Labs",
     description: "Loden Labs — Web and mobile apps crafted by Jason Loden Ganub. Digital Alchemy.",
     url: "https://lodenlabs.com",
-    siteName: "LodenLabs",
+    siteName: "Loden Labs",
     type: "website",
     images: [
       {
         url: "https://lodenlabs.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "LodenLabs - Digital Alchemy",
+        alt: "Loden Labs - Digital Alchemy",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LodenLabs - Digital Alchemy",
+    title: "Loden Labs - Digital Alchemy",
     description: "Web and mobile apps crafted by Jason Loden Ganub.",
     creator: "@jason_ganub",
     images: ["https://lodenlabs.com/og-image.png"],
